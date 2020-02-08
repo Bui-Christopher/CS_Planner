@@ -26,6 +26,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.JTextPane;
+import javax.swing.border.LineBorder;
 
 public class MyFrame1 extends JFrame {	
 	private JTextField usernameTextField;
@@ -49,6 +53,7 @@ public class MyFrame1 extends JFrame {
 			public void run() {
 				try {
 					MyFrame1 frame = new MyFrame1();
+				//	frame.setResizable(false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -61,7 +66,7 @@ public class MyFrame1 extends JFrame {
 	 * Create the frame.
 	 */
 	public MyFrame1() {
-		setTitle("Class Schedule App");
+		setTitle("Student Tool App");
 				
 		
 		// create the DAO
@@ -101,7 +106,7 @@ public class MyFrame1 extends JFrame {
 		panel_1.add(panel_7);
 		panel_7.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel_3 = new JLabel("Welcome to Class Planner");
+		JLabel lblNewLabel_3 = new JLabel("Welcome to Student Tool");
 		lblNewLabel_3.setForeground(new Color(204, 0, 0));
 		lblNewLabel_3.setFont(new Font("Vivaldi", Font.BOLD, 52));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -157,6 +162,7 @@ public class MyFrame1 extends JFrame {
 		login_panel.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblNewLabel_4 = new JLabel("Login");
+		lblNewLabel_4.setForeground(new Color(204, 0, 0));
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 52));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		login_panel.add(lblNewLabel_4, BorderLayout.CENTER);
@@ -249,6 +255,7 @@ public class MyFrame1 extends JFrame {
 		panel_8.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblRegister = new JLabel("Register");
+		lblRegister.setForeground(new Color(204, 0, 0));
 		lblRegister.setFont(new Font("Tahoma", Font.BOLD, 52));
 		lblRegister.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_8.add(lblRegister, BorderLayout.CENTER);
@@ -258,16 +265,147 @@ public class MyFrame1 extends JFrame {
 		panel.add(panel_4, "name_26037072067628");
 		panel_4.setLayout(null);
 		
+		JPanel panel_9 = new JPanel();
+		panel_9.setBackground(new Color(255, 204, 0));
+		panel_9.setBounds(0, 0, 734, 131);
+		panel_4.add(panel_9);
+		panel_9.setLayout(new BorderLayout(0, 0));
+		
 		JLabel lblWelcome = new JLabel("Welcome, name of the user");
+		lblWelcome.setForeground(new Color(204, 0, 0));
+		lblWelcome.setFont(new Font("Tahoma", Font.BOLD, 30));
+		panel_9.add(lblWelcome, BorderLayout.CENTER);
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWelcome.setBounds(220, 58, 378, 26);
-		panel_4.add(lblWelcome);
+		
+		JPanel panel_10 = new JPanel();
+		panel_10.setBorder(new EtchedBorder(EtchedBorder.RAISED, new Color(0, 0, 255), null));
+		panel_10.setBounds(126, 160, 484, 57);
+		panel_4.add(panel_10);
+		panel_10.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblClassPlanner = new JLabel(" \u2666 Class Planner");
+		lblClassPlanner.setFont(new Font("Tahoma", Font.BOLD, 20));
+		panel_10.add(lblClassPlanner, BorderLayout.WEST);
+		
+		JButton btnGo = new JButton("Go");
+		btnGo.setFont(new Font("Tahoma", Font.BOLD, 20));
+		panel_10.add(btnGo, BorderLayout.EAST);
+		
+		JPanel panel_11 = new JPanel();
+		panel_11.setBorder(new EtchedBorder(EtchedBorder.RAISED, new Color(0, 0, 255), null));
+		panel_11.setBounds(126, 217, 484, 57);
+		panel_4.add(panel_11);
+		panel_11.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblGpaCalculator = new JLabel(" \u2666 GPA Calculator");
+		lblGpaCalculator.setFont(new Font("Tahoma", Font.BOLD, 20));
+		panel_11.add(lblGpaCalculator, BorderLayout.WEST);
+		
+		//=========================go to the GPA Calculator panel,
+	
+		JButton btnGo_1 = new JButton("Go");
+		btnGo_1.setFont(new Font("Tahoma", Font.BOLD, 20));
+	
+		panel_11.add(btnGo_1, BorderLayout.EAST);
+		
+		JPanel panel_12 = new JPanel();
+		panel_12.setBorder(new EtchedBorder(EtchedBorder.RAISED, new Color(0, 0, 255), null));
+		panel_12.setBounds(126, 274, 484, 57);
+		panel_4.add(panel_12);
+		panel_12.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblGraduationDate = new JLabel(" \u2666 Graduation Date");
+		lblGraduationDate.setFont(new Font("Tahoma", Font.BOLD, 20));
+		panel_12.add(lblGraduationDate, BorderLayout.WEST);
+		
+		JButton btnGo_2 = new JButton("Go");
+		btnGo_2.setFont(new Font("Tahoma", Font.BOLD, 20));
+		panel_12.add(btnGo_2, BorderLayout.EAST);
+		
+		JPanel panel_13 = new JPanel();
+		panel_13.setBorder(new EtchedBorder(EtchedBorder.RAISED, new Color(0, 0, 255), null));
+		panel_13.setBounds(126, 331, 484, 57);
+		panel_4.add(panel_13);
+		panel_13.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblTotalUnits = new JLabel(" \u2666 Total Units");
+		lblTotalUnits.setFont(new Font("Tahoma", Font.BOLD, 20));
+		panel_13.add(lblTotalUnits, BorderLayout.WEST);
+		
+		JButton btnGo_3 = new JButton("Go");
+		btnGo_3.setFont(new Font("Tahoma", Font.BOLD, 20));
+		panel_13.add(btnGo_3, BorderLayout.EAST);
+		
+		JPanel panel_14 = new JPanel();
+		panel_14.setBorder(new EtchedBorder(EtchedBorder.RAISED, new Color(0, 0, 255), null));
+		panel_14.setBounds(126, 389, 484, 96);
+		panel_4.add(panel_14);
+		panel_14.setLayout(new BorderLayout(0, 0));
+		
+		JTextPane txtpnKeepUpWith = new JTextPane();
+		txtpnKeepUpWith.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		txtpnKeepUpWith.setText("Keep up with your plan. Your school classes have not changed. ");
+		panel_14.add(txtpnKeepUpWith, BorderLayout.CENTER);
 		
 		JPanel panel_5 = new JPanel();
-		getContentPane().add(panel_5, "name_441901303100400");
+		panel_5.setForeground(new Color(204, 0, 0));
+		panel.add(panel_5, "name_615154751431400");
+		panel_5.setLayout(null);
+		
+		JPanel panel_15 = new JPanel();
+		panel_15.setBackground(new Color(255, 204, 0));
+		panel_15.setBounds(0, 0, 734, 133);
+		panel_5.add(panel_15);
+		panel_15.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblGpaCalculator_1 = new JLabel("GPA Calculator");
+		lblGpaCalculator_1.setForeground(new Color(204, 0, 0));
+		lblGpaCalculator_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGpaCalculator_1.setFont(new Font("Tahoma", Font.BOLD, 35));
+		panel_15.add(lblGpaCalculator_1, BorderLayout.CENTER);
+		
+		JPanel panel_16 = new JPanel();
+		panel_16.setBackground(new Color(204, 204, 255));
+		panel_16.setBorder(new LineBorder(new Color(0, 102, 0)));
+		panel_16.setBounds(273, 312, 197, 50);
+		panel_5.add(panel_16);
+		panel_16.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblYourGpa = new JLabel("   Your GPA:");
+		panel_16.add(lblYourGpa, BorderLayout.CENTER);
+		lblYourGpa.setFont(new Font("Tahoma", Font.BOLD, 20));
+		
+		JLabel label = new JLabel(" 0.0   ");
+		panel_16.add(label, BorderLayout.EAST);
+		label.setFont(new Font("Tahoma", Font.BOLD, 20));
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object source = e.getSource();
+				if(source == btnBack)
+				{
+					panel.removeAll();
+					panel.add(panel_4);
+					panel.repaint();
+					panel.revalidate();
+				}
+			}
+		});
+		btnBack.setBorder(new LineBorder(new Color(0, 102, 0)));
+		btnBack.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnBack.setBounds(273, 414, 197, 50);
+		panel_5.add(btnBack);
+		
+		JButton btnCalculate = new JButton("Calculate");
+		btnCalculate.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnCalculate.setBorder(new LineBorder(new Color(0, 102, 0)));
+		btnCalculate.setBounds(273, 203, 197, 50);
+		panel_5.add(btnCalculate);
 		
 		JPanel panel_6 = new JPanel();
-		getContentPane().add(panel_6, "name_441913834792900");
+		panel.add(panel_6, "name_615163967191000");
+		panel_6.setLayout(null);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -302,6 +440,19 @@ public class MyFrame1 extends JFrame {
 					panel.repaint();
 					panel.revalidate();
 				}
+			}
+		});
+		btnGo_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object source = e.getSource();
+				if(source == btnGo_1)
+				{
+					panel.removeAll();
+					panel.add(panel_5);
+					panel.repaint();
+					panel.revalidate();
+				}
+				
 			}
 		});
 		mntmHome.setHorizontalAlignment(SwingConstants.LEFT);
